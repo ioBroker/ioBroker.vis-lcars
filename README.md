@@ -3,6 +3,7 @@ ioBroker.vis-lcars
 ============
 
 Lcars (Star trek) widget sets for ioBroker.vis
+![Example](img/widgets.png)
 
 ## Changelog
 

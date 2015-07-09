@@ -1,6 +1,6 @@
 {
-  "name": "iobroker.vis-metro",
-  "description": "Metro Widgets for ioBroker.vis",
+  "name": "iobroker.vis-lcars",
+  "description": "lcars Widgets for ioBroker.vis",
   "version": "0.1.0",
   "author": {
     "name": "hobbyquaker",
@@ -10,15 +10,15 @@
     "bluefox <bluefox@ccu.io>",
     "hobbyquaker <hq@ccu.io>"
   ],
-  "homepage": "https://github.com/ioBroker/ioBroker.vis-metro",
+  "homepage": "https://github.com/ioBroker/ioBroker.vis-lcars",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ioBroker/ioBroker.vis-metro"
+    "url": "https://github.com/ioBroker/ioBroker.vis-lcars"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/ioBroker/ioBroker.vis-metro/blob/master/LICENSE"
+      "url": "https://github.com/ioBroker/ioBroker.vis-lcars/blob/master/LICENSE"
     }
   ],
   "keywords": [
@@ -28,7 +28,7 @@
     "web interface",
     "home automation",
     "SCADA",
-	"metro GUI"
+	"lcars GUI"
   ],
   "devDependencies": {
     "grunt": "~0.4.4",
@@ -42,9 +42,9 @@
     "grunt-exec": "~0.4.5"
   },
   "bugs": {
-    "url": "https://github.com/ioBroker/ioBroker.vis-metro/issues"
+    "url": "https://github.com/ioBroker/ioBroker.vis-lcars/issues"
   },
-  "main": "widgets/metro.html",
+  "main": "widgets/lcars.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
