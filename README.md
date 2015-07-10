@@ -7,7 +7,7 @@ Lcars (Star trek) widget sets for ioBroker.vis
 
 ## Changelog
 
-### 0.1.0 (2015-07-10)
+### 0.1.2 (2015-07-10)
 - (bluefox) fix link
 
 ### 0.0.1 (2015-07-09)
