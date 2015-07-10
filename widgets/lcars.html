@@ -376,8 +376,8 @@
         data-vis-attrs="html;nav_view;color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
         >
     <div class="vis-widget <%== this.data.attr('class') %>" style="width: 88px; height: 74px; font-family: lcars_font; font-size: 30px; text-align: right; " id="<%= this.data.attr('wid') %>">
-        <div class="vis-widget-body" style="background-color: <%= vis.binds.lcars.color(data.attr('color_default')) %>">
-            <span style="padding-right:4px;cursor:pointer"><%== this.data.attr('html') %></a>
+        <div class="vis-widget-body" style="cursor:pointer;background-color: <%= vis.binds.lcars.color(data.attr('color_default')) %>">
+            <span style="padding-right:4px"><%== this.data.attr('html') %></a>
         </div>
         <div <%= (el) -> vis.binds.lcars.nav(el, data.attr("nav_view"), data.attr("color_active")) %>></div>
     </div>
