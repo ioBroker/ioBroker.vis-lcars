@@ -28,6 +28,7 @@
 		"restartAdapters":          ["vis"]
     },
     "native": {
+		"dependencies":          ["basic"]
     },
     "instanceObjects": [
     ]
