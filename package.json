@@ -1,7 +1,7 @@
 {
   "name": "iobroker.vis-lcars",
   "description": "lcars Widgets for ioBroker.vis",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": {
     "name": "hobbyquaker",
     "email": "hq@ccu.io"

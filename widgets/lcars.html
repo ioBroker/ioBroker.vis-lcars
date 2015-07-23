@@ -333,7 +333,7 @@
 
             if (vis.activeView == nav_view) $this.css("background-color", color_active);
 
-            $this.click(function () {
+            $this.click(function (e) {
                 if (!vis.editMode) {
                     vis.changeView(nav_view);
                     e.preventDefault();

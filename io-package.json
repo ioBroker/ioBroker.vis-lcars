@@ -1,7 +1,7 @@
 {
     "common": {
         "name":                     "vis-lcars",
-        "version": "0.1.2",
+        "version": "0.1.3",
         "title":                    "ioBroker Visualisation - lcars style Widgets",
         "desc": {
             "en":                   "Star Trek Widgets for ioBroker.vis",
