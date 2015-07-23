@@ -153,6 +153,16 @@
             }
             return val;
         },
+        viewSelected: function (widgetID, view, newView, attr, isCss) {
+            var changed = [];
+            if (!vis.views[view].widgets[widgetID].data.html ||
+                vis.views[vis.views[view].widgets[widgetID].data.html]) {
+                changed.push('html');
+                vis.views[view].widgets[widgetID].data.html = newView;
+                vis.widgets[widgetID].data.html = newView;
+            }
+            return changed.length ? changed : null;
+        },
         _button: function (el, options, id, val, color_active, title, subtitle) {
             // title and subtitle can be {oid: a, prepend: b, append_singular: c, append_plural: d, digits: 0}
             var $this = $(el);
@@ -328,10 +338,11 @@
 
             }, speed, $table);
         },
-        nav: function (el, nav_view, color_active) {
+        nav: function (el, nav_view, color_normal, color_active) {
             var $this = $(el).prev();
 
             if (vis.activeView == nav_view) $this.css("background-color", color_active);
+            console.log(vis.activeView + ' ' + nav_view);
 
             $this.click(function (e) {
                 if (!vis.editMode) {
@@ -341,6 +352,13 @@
                 }
             });
 
+            $(window).on('viewChanged', function (newView) {
+                if (vis.activeView == nav_view) {
+                    $this.css("background-color", color_active);
+                } else {
+                    $this.css("background-color", color_normal);
+                }
+            });
         }
     };
 </script>
@@ -373,13 +391,13 @@
         data-vis-type="navigation"
         data-vis-name="HTML"
         data-vis-prev='<div id="prev_tplLcarsHtmlNav" style="position: relative; text-align: initial;padding: 4px "><div class="vis-widget_prev" style="width: 116px; height: 35px; font-family: lcars_font; font-size: 30px; text-align: right; position: absolute;"><div class="vis-widget-prev-body" style="background-color: rgb(255, 153, 0);"> <span style="padding-right:4px">Link </span></div></div></div>'
-        data-vis-attrs="html;nav_view;color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
+        data-vis-attrs="html;nav_view/views/viewSelected;color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;color_active[purple]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
         >
     <div class="vis-widget <%== this.data.attr('class') %>" style="width: 88px; height: 74px; font-family: lcars_font; font-size: 30px; text-align: right; " id="<%= this.data.attr('wid') %>">
         <div class="vis-widget-body" style="cursor:pointer;background-color: <%= vis.binds.lcars.color(data.attr('color_default')) %>">
             <span style="padding-right:4px"><%== this.data.attr('html') %></a>
         </div>
-        <div <%= (el) -> vis.binds.lcars.nav(el, data.attr("nav_view"), data.attr("color_active")) %>></div>
+        <div <%= (el) -> vis.binds.lcars.nav(el, data.attr("nav_view"), data.attr('color_default'), data.attr("color_active")) %>></div>
     </div>
 </script>
 
