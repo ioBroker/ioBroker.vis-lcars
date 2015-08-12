@@ -344,13 +344,19 @@
             if (vis.activeView == nav_view) $this.css("background-color", color_active);
             console.log(vis.activeView + ' ' + nav_view);
 
-            $this.click(function (e) {
-                if (!vis.editMode) {
+            if (!vis.editMode) {
+                $this.on('click touchstart', function (e) {
+                    // Protect against two events
+                    var now = (new Date()).getTime();
+                    var lastClick = $(this).data('lc');
+                    if (lastClick && now - lastClick < 50) return;
+                    $(this).data('lc', now);
+                    
                     vis.changeView(nav_view);
                     e.preventDefault();
                     return false;
-                }
-            });
+                });
+            }
 
             $(window).on('viewChanged', function (newView) {
                 if (vis.activeView == nav_view) {
