@@ -7,7 +7,7 @@ Lcars (Star trek) widget sets for ioBroker.vis
 
 ## Changelog
 
-### 0.1.5 (2015-08-12)
+### 0.1.6 (2015-08-12)
 - (bluefox) protect against double event: click and touchstart
 
 ### 0.1.4 (2015-07-23)

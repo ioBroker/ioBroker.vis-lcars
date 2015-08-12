@@ -347,11 +347,8 @@
             if (!vis.editMode) {
                 $this.on('click touchstart', function (e) {
                     // Protect against two events
-                    var now = (new Date()).getTime();
-                    var lastClick = $(this).data('lc');
-                    if (lastClick && now - lastClick < 50) return;
-                    $(this).data('lc', now);
-                    
+                    if (vis.detectBounce(this)) return;
+
                     vis.changeView(nav_view);
                     e.preventDefault();
                     return false;
