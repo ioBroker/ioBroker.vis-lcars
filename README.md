@@ -7,6 +7,9 @@ Lcars (Star trek) widget sets for ioBroker.vis
 
 ## Changelog
 
+### 1.0.0 (2016-04-04)
+- (bluefox) fix colors in navigation widget
+
 ### 0.1.6 (2015-08-12)
 - (bluefox) protect against double event: click and touchstart
 
@@ -20,5 +23,5 @@ Lcars (Star trek) widget sets for ioBroker.vis
 - (bluefox) initial checkin
 
 ## License
- Copyright (c) 2013-2015 hobbyquaker https://github.com/hobbyquaker, bluefox https://github.com/GermanBluefox
+ Copyright (c) 2013-2016 hobbyquaker https://github.com/hobbyquaker, bluefox https://github.com/GermanBluefox
  MIT

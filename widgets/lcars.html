@@ -1,4 +1,11 @@
 <!--
+
+    ioBroker.vis lcars Widget-Set
+
+    version: "1.0.0"
+
+    2013-2016 hobbyquaker, bluefox
+
     TODO - Slider Widgets
     TODO - Bar Widgets
     TODO - 4way Controller Widget
@@ -81,9 +88,18 @@
                 "ru": "Удалите значение полностью, что бы деактивировать округление"
             }
         });
+
+        vis.addFont('lcars_font');
     }
     
     vis.binds.lcars = {
+        version: "1.0.0",
+        showVersion: function () {
+            if (vis.binds.lcars.version) {
+                console.log('Version lcars: ' + vis.binds.lcars.version);
+                vis.binds.lcars.version = null;
+            }
+        },
         color: function (name) {
             switch (name) {
                 case "orange":
@@ -133,7 +149,7 @@
             } else {
                 // get actual value and
                 var val = (vis.states[options.oid + '.val'] !== undefined) ? vis.states[options.oid + '.val'] : 0;
-                if (val === "true" || val === true) val = 1;
+                if (val === 'true' || val === true) val = 1;
 
                 if (options.digits !== null && options.digits !== undefined && options.digits !== '') {
                     val = parseFloat(val).toFixed(parseInt(options.digits, 10));
@@ -243,7 +259,7 @@
             vis.binds.lcars.warpcoreInterval[wid] = _setInterval(function (_this) {
                 i += 1;
                 if (i > 4) i = 0;
-                _this.css("background-position", -d * i);
+                _this.css('background-position', -d * i);
             },speed, $this);
 
         },
@@ -266,13 +282,13 @@
             vis.binds.lcars.warpcoreInterval[wid] = _setInterval(function (_this) {
                 i += 1;
                 if (i > 4) i = 0;
-                _this.css("background-position", -d * i);
+                _this.css('background-position', -d * i);
             }, speed, $this);
 
             vis.states.bind(id + '.val', function (e, newVal, oldVal) {
                 var speed = parseInt(minSpeed + ((spdRange / valRange) * parseFloat(newVal)), 10);
-                if (isNaN(speed)) { speed = minSpeed; }
-                if (speed < maxSpeed) { speed = maxSpeed; }
+                if (isNaN(speed))     speed = minSpeed;
+                if (speed < maxSpeed) speed = maxSpeed;
 
                 if (vis.binds.lcars.warpcoreInterval[wid]) {
                     clearInterval(vis.binds.lcars.warpcoreInterval[wid]);
@@ -280,7 +296,7 @@
                 vis.binds.lcars.warpcoreInterval[wid] = _setInterval(function (_this) {
                     i += 1;
                     if (i > 4) i = 0;
-                    _this.css("background-position", -d * i);
+                    _this.css('background-position', -d * i);
                 }, speed, $this);
             });
 
@@ -310,39 +326,38 @@
             }
 
             vis.binds.lcars.dnaInterval[wid] = _setInterval(function (_this) {
-                i += 1;
+                i++;
                 if (i > 283) i = 0;
-                _this.css("background-position", i);
+                _this.css('background-position', i);
             }, val * speed, $this);
 
         },
         randomNumber: function () {
-            return ("00" + parseInt((Math.random() * 1000), 10)).slice(-3);
+            return ('00' + parseInt((Math.random() * 1000), 10)).slice(-3);
         },
         randomInterval: {},
         random: function (el, rows, cols, speed, wid) {
             var $this = $(el).prev();
-            var $table = $this.find("table");
+            var $table = $this.find('table');
             if (vis.binds.lcars.randomInterval[wid]) {
                 clearInterval(vis.binds.lcars.randomInterval[wid]);
             }
             vis.binds.lcars.randomInterval[wid] = _setInterval(function (_table) {
-                if (_table.find("tr").length >= rows) {
-                    _table.html("");
+                if (_table.find('tr').length >= rows) {
+                    _table.html('');
                 }
-                var colsHtml = "";
+                var colsHtml = '';
                 for (var j = 0; j < cols; j++) {
-                    colsHtml += vis.binds.lcars.randomNumber()+"</td><td>";
+                    colsHtml += vis.binds.lcars.randomNumber() + '</td><td>';
                 }
-                _table.append("<tr><td>" + colsHtml + "</td></tr>");
+                _table.append("<tr><td>" + colsHtml + '</td></tr>');
 
             }, speed, $table);
         },
         nav: function (el, nav_view, color_normal, color_active) {
             var $this = $(el).prev();
 
-            if (vis.activeView == nav_view) $this.css("background-color", color_active);
-            console.log(vis.activeView + ' ' + nav_view);
+            if (vis.activeView == nav_view) $this.css('background-color', vis.binds.lcars.color(color_active));
 
             if (!vis.editMode) {
                 $this.on('click touchstart', function (e) {
@@ -357,13 +372,15 @@
 
             $(window).on('viewChanged', function (newView) {
                 if (vis.activeView == nav_view) {
-                    $this.css("background-color", color_active);
+                    $this.css('background-color', vis.binds.lcars.color(color_active));
                 } else {
-                    $this.css("background-color", color_normal);
+                    $this.css('background-color', vis.binds.lcars.color(color_normal));
                 }
             });
         }
     };
+
+    vis.binds.lcars.showVersion();
 </script>
 
 <!--script id="tplLcarsSidePanel"
@@ -397,10 +414,10 @@
         data-vis-attrs="html;nav_view/views/viewSelected;color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;color_active[purple]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
         >
     <div class="vis-widget <%== this.data.attr('class') %>" style="width: 88px; height: 74px; font-family: lcars_font; font-size: 30px; text-align: right; " id="<%= this.data.attr('wid') %>">
-        <div class="vis-widget-body" style="cursor:pointer;background-color: <%= vis.binds.lcars.color(data.attr('color_default')) %>">
+        <div class="vis-widget-body" style="cursor: pointer; background-color: <%= vis.binds.lcars.color(data.attr('color_default')) %>">
             <span style="padding-right:4px"><%== this.data.attr('html') %></a>
         </div>
-        <div <%= (el) -> vis.binds.lcars.nav(el, data.attr("nav_view"), data.attr('color_default'), data.attr("color_active")) %>></div>
+        <div <%= (el) -> vis.binds.lcars.nav(el, data.attr('nav_view'), data.attr('color_default'), data.attr("color_active")) %>></div>
     </div>
 </script>
 
@@ -641,7 +658,7 @@
         data-vis-type="ctrl"
         data-vis-name="Button Increment"
         data-vis-prev='<div id="prev_tplLcarsButtonInc" style="text-align: initial;padding: 4px"><div class="vis-widget_prev vis-lcars" style="width: 132px; height: 46px; position: absolute;"> <div class="vis-widget-prev-body"> <span class="button RR L" style="width: 70px; background-color: rgb(255, 153, 0);"><span>increment</span></span> </div> </div></div>'
-        data-vis-attrs="oid;step[0.01];minmax[1];repeat_delay[800];repeat_interval[800];title;rounded/select,both,left,right,none;"
+        data-vis-attrs="oid;step[1];minmax[100];repeat_delay[800];repeat_interval[800];title;rounded/select,both,left,right,none;"
         data-vis-attrs0="color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;"
         data-vis-attrs1="group.subtitle;subtitle[increment];subtitle_show/select,none,left,right;subtitle_color/nselect,,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
         >
@@ -697,7 +714,7 @@
     data-vis-type="ctrl,val"
     data-vis-name="Button Increment"
     data-vis-prev='<div id="tplLcarsButtonIncVal" style="position: relative; text-align: initial;padding: 4px "><div class="vis-widget_prev vis-lcars" style="width: 132px; height: 50px"> <div class="vis-widget-prev-body"> <span class="button RR L" style="width: 80px; background-color: rgb(255, 153, 0);"><span class="B_titleL _subtitle" style="color:#cc99cc">25.0</span><span class="_title">inc</span></span> </div> </div></div>'
-    data-vis-attrs="oid;step[0.01];minmax[1];repeat_delay[800];repeat_interval[800];"
+    data-vis-attrs="oid;step[1];minmax[100];repeat_delay[800];repeat_interval[800];"
     data-vis-attrs0="color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;"
     data-vis-attrs1="color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;"
     data-vis-attrs2="rounded/select,both,left,right,none;"
