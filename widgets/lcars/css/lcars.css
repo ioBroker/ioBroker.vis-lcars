@@ -312,8 +312,8 @@ div.vis-lcars .B_blankR{
     width:100%;
 }
 div.vis-lcars .RR{border-radius:20px;-moz-border-radius:20px;-webkit-border-radius:20px;}
-div.vis-lcars .SR{-moz-border-radius-topright:20px;-moz-border-radius-bottomright:20px;-webkit-border-top-right-radius:20px;-webkit-border-bottom-right-radius:20px;}
-div.vis-lcars .RS{-moz-border-radius-topleft:20px;-moz-border-radius-bottomleft:20px;-webkit-border-top-left-radius:20px;-webkit-border-bottom-left-radius:20px;}
+div.vis-lcars .SR{-moz-border-radius-topright:20px;-moz-border-radius-bottomright:20px;-webkit-border-top-right-radius:20px;-webkit-border-bottom-right-radius:20px;border-top-right-radius:20px;border-bottom-right-radius:20px;}
+div.vis-lcars .RS{-moz-border-radius-topleft:20px;-moz-border-radius-bottomleft:20px;-webkit-border-top-left-radius:20px;-webkit-border-bottom-left-radius:20px;border-top-left-radius:20px;border-bottom-left-radius:20px;}
 div.vis-lcars .L{width:100px;}
 div.vis-lcars .B_title a:link, div.vis-lcars .B_title a:visited, div.vis-lcars .B_title a:hover{color:#fc0;text-decoration:none;}
 div.vis-lcars .button a:link, div.vis-lcars .button a:visited, div.vis-lcars .button a:hover{color:black;text-decoration:none!important;}
