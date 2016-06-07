@@ -1,7 +1,14 @@
 {
     "common": {
         "name":                     "vis-lcars",
-        "version": "1.0.0",
+        "version": "1.0.1",
+		"news": {
+            "1.0.1": {
+                "en": "fix radius settings for firefox",
+                "de": "fix radius settings for firefox",
+                "ru": "fix radius settings for firefox"
+            }
+        },
         "title":                    "ioBroker Visualisation - lcars style Widgets",
         "desc": {
             "en":                   "Star Trek Widgets for ioBroker.vis",
@@ -25,7 +32,8 @@
         "onlyWWW":                  true,
         "singleton":                true,
         "type":                     "vis",
-		"restartAdapters":          ["vis"]
+		"restartAdapters":          ["vis"],
+		"noConfig":                 true
     },
     "native": {
 		"dependencies":          ["basic"]

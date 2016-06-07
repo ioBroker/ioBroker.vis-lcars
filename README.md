@@ -6,6 +6,8 @@ Lcars (Star trek) widget sets for ioBroker.vis
 ![Example](img/widgets.png)
 
 ## Changelog
+### 1.0.1 (2016-06-07)
+- (ploebb) fix radius settings for firefox
 
 ### 1.0.0 (2016-04-04)
 - (bluefox) fix colors in navigation widget
