@@ -6,7 +6,7 @@ Lcars (Star trek) widget sets for ioBroker.vis
 ![Example](img/widgets.png)
 
 ## Changelog
-### 1.0.2 (2017-09-19)
+### 1.0.3 (2017-09-22)
 - (bluefox) fix render of state on slow devices
 
 ### 1.0.1 (2016-06-07)

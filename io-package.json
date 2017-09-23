@@ -1,9 +1,9 @@
 {
     "common": {
         "name":                     "vis-lcars",
-        "version": "1.0.2",
+        "version": "1.0.3",
 		"news": {
-		    "1.0.2": {
+		    "1.0.3": {
                 "en": "fix render of state on slow devices",
                 "de": "Korrigiere Rendering von State auf langsamen Geräten",
                 "ru": "Исправлен рендер state на медленных устройствах"

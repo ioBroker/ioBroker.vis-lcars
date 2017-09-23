@@ -2,7 +2,7 @@
 
     ioBroker.vis lcars Widget-Set
 
-    version: "1.0.2"
+    version: "1.0.3"
 
     2013-2017 hobbyquaker, bluefox
 
@@ -93,7 +93,7 @@
     }
     
     vis.binds.lcars = {
-        version: "1.0.2",
+        version: "1.0.3",
         showVersion: function () {
             if (vis.binds.lcars.version) {
                 console.log('Version lcars: ' + vis.binds.lcars.version);
@@ -196,7 +196,7 @@
             }
             // title and subtitle can be {oid: a, prepend: b, append_singular: c, append_plural: d, digits: 0}
             var $this = $div.find('.vis-widget-lcars-span');
-            $this.width($this.parent().width() - 52);
+
             var bound = [];
             function onChange(e, newVal /* , oldVal */) {
                 if (subtitle && typeof subtitle === 'object' && subtitle.oid === e.type) {
@@ -666,7 +666,7 @@
         >
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 150px; height: 45px" id="<%= this.data.attr('wid') %>"  data-oid="<%= this.data.attr('oid') %>" data-val="<%= this.data.attr('value') %>" <%= (el) -> vis.binds.basic.state(el) %> >
         <div class="vis-widget-body">
-            <span class="vis-widget-lcars-span" <%= (el) -> vis.binds.lcars.button(this.data.wid, this.view, el, {rounded: data.attr('rounded'), blank: data.attr('blank'), extended: true, color: data.attr('color_default'), subTitle: {direction: data.attr('subtitle_show'), text: data.attr('subtitle'), color: data.attr('subtitle_color')}, length: data.attr('width')}, data.attr('oid'), data.attr('value'), data.attr('color_active'), this.data.attr('title')) %>><span class="_title"></span></span>
+            <span class="vis-widget-lcars-span" style="width: calc(100% - 50px)" <%= (el) -> vis.binds.lcars.button(this.data.wid, this.view, el, {rounded: data.attr('rounded'), blank: data.attr('blank'), extended: true, color: data.attr('color_default'), subTitle: {direction: data.attr('subtitle_show'), text: data.attr('subtitle'), color: data.attr('subtitle_color')}, length: data.attr('width')}, data.attr('oid'), data.attr('value'), data.attr('color_active'), this.data.attr('title')) %>><span class="_title"></span></span>
         </div>
     </div>
 </script>
@@ -684,7 +684,7 @@
         >
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 150px; height: 45px" id="<%= this.data.attr('wid') %>" data-vis-step="<%= this.data.attr('step') %>" data-oid="<%= this.data.attr('oid') %>" data-val="<%= this.data.attr('value') %>" <%= (el) -> vis.binds.basic.increment(el, data.attr('minmax'), data.attr('repeat_delay'), data.attr('repeat_interval')) %>>
         <div class="vis-widget-body">
-            <span class="vis-widget-lcars-span" <%= (el) -> vis.binds.lcars.button(this.data.wid, this.view, el, {rounded: data.attr('rounded'), blank: data.attr('blank'), extended: true, color: data.attr('color_default'), subTitle: {direction: data.attr('subtitle_show'), text: data.attr('subtitle'), color: data.attr('subtitle_color')}}, data.attr('oid'), data.attr('minmax'), data.attr('color_active'), this.data.attr('title')) %>><span class="_title"></span></span>
+            <span class="vis-widget-lcars-span" style="width: calc(100% - 50px)" <%= (el) -> vis.binds.lcars.button(this.data.wid, this.view, el, {rounded: data.attr('rounded'), blank: data.attr('blank'), extended: true, color: data.attr('color_default'), subTitle: {direction: data.attr('subtitle_show'), text: data.attr('subtitle'), color: data.attr('subtitle_color')}}, data.attr('oid'), data.attr('minmax'), data.attr('color_active'), this.data.attr('title')) %>><span class="_title"></span></span>
         </div>
     </div>
 </script>
@@ -701,7 +701,7 @@
         >
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 150px; height: 45px" id="<%= this.data.attr('wid') %>" data-vis-step="<%= this.data.attr('step') %>" data-oid="<%= this.data.attr('oid') %>" data-val="<%= this.data.attr('value') %>" <%= (el) -> vis.binds.basic.toggle(el) %>>
         <div class="vis-widget-body">
-            <span class="vis-widget-lcars-span" <%= (el) -> vis.binds.lcars.button(this.data.wid, this.view, el, {rounded: data.attr('rounded'), blank: data.attr('blank'), extended: true, color: data.attr('color_default'), subTitle: {direction: data.attr('subtitle_show'), text: data.attr('subtitle'), color:data.attr('subtitle_color')}}, data.attr('oid'), 1, data.attr('color_active'), this.data.attr('title')) %>><span class="_title"></span></span>
+            <span class="vis-widget-lcars-span" style="width: calc(100% - 50px)" <%= (el) -> vis.binds.lcars.button(this.data.wid, this.view, el, {rounded: data.attr('rounded'), blank: data.attr('blank'), extended: true, color: data.attr('color_default'), subTitle: {direction: data.attr('subtitle_show'), text: data.attr('subtitle'), color:data.attr('subtitle_color')}}, data.attr('oid'), 1, data.attr('color_active'), this.data.attr('title')) %>><span class="_title"></span></span>
         </div>
     </div>
 </script>
@@ -722,7 +722,7 @@
     >
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 150px; height: 45px;" id="<%= this.data.attr('wid') %>"  data-oid="<%= this.data.attr('oid') %>" data-val="<%= this.data.attr('value') %>" <%= (el) -> vis.binds.basic.state(el) %> >
         <div class="vis-widget-body">
-            <span class="vis-widget-lcars-span" <%= (el) -> vis.binds.lcars.button(this.data.wid, this.view, el, {rounded: data.attr('rounded'), blank: data.attr('blank'), extended:true, color: data.attr('color_default'), subTitle: {direction: data.attr('subtitle_show'), text: data.attr('subtitle'), color: data.attr('subtitle_color')}}, data.attr('oid'), data.attr('value'), data.attr('color_active'), {oid: data.attr('title_oid'), prepend: data.attr('title_prepend'), append_singular: data.attr('title_append_singular'),append_plural: data.attr('title_append_plural'), digits: data.attr('title_digits')}, {oid: data.attr('subtitle_oid'), prepend: data.attr('subtitle_prepend'), append_singular: data.attr('subtitle_append_singular'), append_plural: data.attr('subtitle_append_plural'), digits: data.attr('subtitle_digits')}) %>><span class="_title"></span></span>
+            <span class="vis-widget-lcars-span" style="width: calc(100% - 50px)" <%= (el) -> vis.binds.lcars.button(this.data.wid, this.view, el, {rounded: data.attr('rounded'), blank: data.attr('blank'), extended:true, color: data.attr('color_default'), subTitle: {direction: data.attr('subtitle_show'), text: data.attr('subtitle'), color: data.attr('subtitle_color')}}, data.attr('oid'), data.attr('value'), data.attr('color_active'), {oid: data.attr('title_oid'), prepend: data.attr('title_prepend'), append_singular: data.attr('title_append_singular'),append_plural: data.attr('title_append_plural'), digits: data.attr('title_digits')}, {oid: data.attr('subtitle_oid'), prepend: data.attr('subtitle_prepend'), append_singular: data.attr('subtitle_append_singular'), append_plural: data.attr('subtitle_append_plural'), digits: data.attr('subtitle_digits')}) %>><span class="_title"></span></span>
         </div>
     </div>
 </script>
@@ -743,7 +743,7 @@
     >
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 150px; height: 45px;" id="<%= this.data.attr('wid') %>" data-vis-step="<%= this.data.attr('step') %>" data-oid="<%= this.data.attr('oid') %>" data-val="<%= this.data.attr('value') %>" <%= (el) -> vis.binds.basic.increment(el, data.attr('minmax'), data.attr('repeat_delay'), data.attr('repeat_interval')) %>>
         <div class="vis-widget-body">
-            <span class="vis-widget-lcars-span" <%= (el) -> vis.binds.lcars.button(this.data.wid, this.view, el, {rounded: data.attr('rounded'),blank:data.attr('blank'),extended:true,color:data.attr('color_default'),subTitle:{direction:data.attr('subtitle_show'),text:data.attr('subtitle'), color: data.attr('subtitle_color')}}, data.attr('oid'), data.attr('minmax'), data.attr('color_active'), {oid: data.attr('title_oid'), prepend: data.attr('title_prepend'), append_singular: data.attr('title_append_singular'),append_plural: data.attr('title_append_plural'), digits: data.attr('title_digits')}, {oid: data.attr('subtitle_oid'), prepend: data.attr('subtitle_prepend'), append_singular: data.attr('subtitle_append_singular'), append_plural: data.attr('subtitle_append_plural'), digits: data.attr('subtitle_digits')}) %>><span class="_title"></span></span>
+            <span class="vis-widget-lcars-span" style="width: calc(100% - 50px)" <%= (el) -> vis.binds.lcars.button(this.data.wid, this.view, el, {rounded: data.attr('rounded'),blank:data.attr('blank'),extended:true,color:data.attr('color_default'),subTitle:{direction:data.attr('subtitle_show'),text:data.attr('subtitle'), color: data.attr('subtitle_color')}}, data.attr('oid'), data.attr('minmax'), data.attr('color_active'), {oid: data.attr('title_oid'), prepend: data.attr('title_prepend'), append_singular: data.attr('title_append_singular'),append_plural: data.attr('title_append_plural'), digits: data.attr('title_digits')}, {oid: data.attr('subtitle_oid'), prepend: data.attr('subtitle_prepend'), append_singular: data.attr('subtitle_append_singular'), append_plural: data.attr('subtitle_append_plural'), digits: data.attr('subtitle_digits')}) %>><span class="_title"></span></span>
         </div>
     </div>
 </script>
@@ -764,7 +764,7 @@
     >
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 150px; height: 45px;;" id="<%= this.data.attr('wid') %>" data-vis-step="<%= this.data.attr('step') %>" data-oid="<%= this.data.attr('oid') %>" data-val="<%= this.data.attr('value') %>" <%= (el) -> vis.binds.basic.toggle(el) %>>
         <div class="vis-widget-body">
-            <span class="vis-widget-lcars-span" <%= (el) -> vis.binds.lcars.button(this.data.wid, this.view, el, {rounded: data.attr('rounded'), blank: data.attr('blank'), extended: true, color: data.attr('color_default'), subTitle: {direction: data.attr('subtitle_show'), text: data.attr('subtitle'), color: data.attr('subtitle_color')}}, data.attr('oid'), 1, data.attr('color_active'), {oid: data.attr('title_oid'), prepend: data.attr('title_prepend'), append_singular: data.attr('title_append_singular'), append_plural: data.attr('title_append_plural'), digits: data.attr('title_digits')}, {oid: data.attr('subtitle_oid'), prepend: data.attr('subtitle_prepend'), append_singular: data.attr('subtitle_append_singular'), append_plural: data.attr('subtitle_append_plural'), digits: data.attr('subtitle_digits')}) %>><span class="_title"></span></span>
+            <span class="vis-widget-lcars-span" style="width: calc(100% - 50px)" <%= (el) -> vis.binds.lcars.button(this.data.wid, this.view, el, {rounded: data.attr('rounded'), blank: data.attr('blank'), extended: true, color: data.attr('color_default'), subTitle: {direction: data.attr('subtitle_show'), text: data.attr('subtitle'), color: data.attr('subtitle_color')}}, data.attr('oid'), 1, data.attr('color_active'), {oid: data.attr('title_oid'), prepend: data.attr('title_prepend'), append_singular: data.attr('title_append_singular'), append_plural: data.attr('title_append_plural'), digits: data.attr('title_digits')}, {oid: data.attr('subtitle_oid'), prepend: data.attr('subtitle_prepend'), append_singular: data.attr('subtitle_append_singular'), append_plural: data.attr('subtitle_append_plural'), digits: data.attr('subtitle_digits')}) %>><span class="_title"></span></span>
         </div>
     </div>
 </script>
