@@ -5,6 +5,9 @@ ioBroker.vis-lcars
 Lcars (Star trek) widget sets for ioBroker.vis
 ![Example](img/widgets.png)
 
+Button attributes:
+![Button description](widgets/lcars/img/buttons.jpg)
+
 ## Changelog
 ### 1.0.3 (2017-09-22)
 - (bluefox) fix render of state on slow devices
