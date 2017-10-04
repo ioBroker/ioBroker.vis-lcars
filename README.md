@@ -9,7 +9,7 @@ Button attributes:
 ![Button description](widgets/lcars/img/buttons.jpg)
 
 ## Changelog
-### 1.0.3 (2017-09-22)
+### 1.0.4 (2017-10-04)
 - (bluefox) fix render of state on slow devices
 
 ### 1.0.1 (2016-06-07)

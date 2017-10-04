@@ -2,7 +2,7 @@
 
     ioBroker.vis lcars Widget-Set
 
-    version: "1.0.3"
+    version: "1.0.4"
 
     2013-2017 hobbyquaker, bluefox
 
@@ -37,7 +37,7 @@
             "r":              {"en": "Right",             "de": "Rechst",                 "ru": "Справа"},
             "l":              {"en": "Left",              "de": "Links",                  "ru": "Cлева"},
             "rounded":        {"en": "Rounded",           "de": "Abgerundet",             "ru": "Закругления"},
-            "subtitle":       {"en": "Subtitle",          "de": "Untertitel",             "ru": "Подзаголо́вок"},
+            "subtitle":       {"en": "Subtitle",          "de": "Untertitel",             "ru": "Подзаголовок"},
             "subtitle_show":  {"en": "Show",              "de": "Zeige",                  "ru": "Показать"},
             "subtitle_color": {"en": "subtitle_color",    "de": "Farbe",                  "ru": "Цвет"},
             "minmax":         {"en": "Mininum or maximum","de": "Mininum oder Maximum",   "ru": "Минимум или максимум"},
@@ -45,6 +45,7 @@
             "repeat_interval": {"en": "Repeat interval",  "de": "Widerholungs- Interval", "ru": "Интервал повтора"},
             "none":           {"en": "none",              "de": "keins",                  "ru": "нигде"},
             "both":           {"en": "both",              "de": "beide",                  "ru": "оба"},
+            "group_title":    {"en": "Title",             "de": "Titel",                  "ru": "Заголовок"},
             "step_tooltip":     {
                 "en": "Can be positive or negative",
                 "de": "Kann positiv oder negativ sein",
@@ -93,7 +94,7 @@
     }
     
     vis.binds.lcars = {
-        version: "1.0.3",
+        version: "1.0.4",
         showVersion: function () {
             if (vis.binds.lcars.version) {
                 console.log('Version lcars: ' + vis.binds.lcars.version);
@@ -199,9 +200,9 @@
 
             var bound = [];
             function onChange(e, newVal /* , oldVal */) {
-                if (subtitle && typeof subtitle === 'object' && subtitle.oid === e.type) {
+                if (subtitle && typeof subtitle === 'object' && (subtitle.oid + '.val') === e.type) {
                     $this.find('._subtitle').html(vis.binds.lcars._oid(subtitle));
-                } else if (title && typeof title === 'object' && title.oid === e.type) {
+                } else if (title && typeof title === 'object' && (title.oid + '.val') === e.type) {
                     $this.data('title', vis.binds.lcars._oid(title));
                     $this.find('._title').html($this.data('title'));
                 } else {
@@ -237,11 +238,15 @@
                 vis.states.bind(id + '.val', onChange);
             }
 
-            var _title = JSON.parse(JSON.stringify(title));
+            var _title;
+            try {
+                _title = JSON.parse(JSON.stringify(title));
+            } catch (e) {
+                _title = null;
+            }
             // process title
-            if (typeof title === 'object') {
+            if (title && typeof title === 'object') {
                 if (title.oid) bound.push(title.oid + '.val');
-                // TODO: bug by every change of some parameter new bind will be created!! In Edit mode can be the problem.
                 _title = vis.binds.lcars._oid(title, bound, onChange);
             }
 
@@ -325,7 +330,6 @@
         dna: function (el, oid, speed, wid, min, max) {
             var i = 0;
             var $this = $(el).prev();
-            console.log('dna');
             if (vis.binds.lcars.dnaInterval[wid]) {
                 clearInterval(vis.binds.lcars.dnaInterval[wid]);
             }
