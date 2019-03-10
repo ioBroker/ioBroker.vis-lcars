@@ -9,7 +9,7 @@ Button attributes:
 ![Button description](widgets/lcars/img/buttons.jpg)
 
 ## Changelog
-### 1.0.4 (2017-10-04)
+![Number of Installations](http://iobroker.live/badges/vis-lcars-installed.svg) ![Number of Installations](http://iobroker.live/badges/vis-lcars-stable.svg) ### 1.0.4 (2017-10-04)
 - (bluefox) fix render of state on slow devices
 
 ### 1.0.1 (2016-06-07)
