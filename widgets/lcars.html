@@ -133,6 +133,12 @@
                 case 'white':
                     return '#ccccff';
                     break;
+                case 'gray':
+                    return '#888888';
+                    break;
+                case 'lightGray':
+                    return '#aaaaaa';
+                    break;
                 default:
                     return '#ffffff';
 
@@ -435,7 +441,7 @@
         data-vis-type="navigation"
         data-vis-name="HTML"
         data-vis-prev='<div id="prev_tplLcarsHtmlNav" style="position: relative; text-align: initial;padding: 4px "><div class="vis-widget_prev" style="width: 116px; height: 35px; font-family: lcars_font; font-size: 30px; text-align: right; position: absolute;"><div class="vis-widget-prev-body" style="background-color: rgb(255, 153, 0);"> <span style="padding-right:4px">Link </span></div></div></div>'
-        data-vis-attrs="html;nav_view/views/viewSelected;color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;color_active[purple]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
+        data-vis-attrs="html;nav_view/views/viewSelected;color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;color_active[purple]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray"
         >
     <div class="vis-widget <%== this.data.attr('class') %>" style="width: 88px; height: 74px; font-family: lcars_font; font-size: 30px; text-align: right; " id="<%= this.data.attr('wid') %>">
         <div class="vis-widget-body" style="cursor: pointer; background-color: <%= vis.binds.lcars.color(data.attr('color_default')) %>">
@@ -452,7 +458,7 @@
         data-vis-type="static"
         data-vis-prev='<div id="prev_tplLcarsHTML" style="position: relative; text-align: initial;padding: 4px "><div class="vis-widget_prev ui-draggable-handle " style="font-family: lcars_font; letter-spacing: 1px; font-size: 30px; width: 93px; height: 33px; padding: 0px; margin: 0px; position: absolute;" > <div class="vis-widget-prev-body" style="padding: 0px; margin: 0px; color: rgb(255, 153, 0);"> HTML Text </div> </div></div>'
         data-vis-name="Text/HTML"
-        data-vis-attrs="html;lcars_color[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
+        data-vis-attrs="html;lcars_color[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray"
         >
     <div class="vis-widget <%== this.data.attr('class') %>" style="font-family: lcars_font; letter-spacing: 1px; font-size: 30px; width: 260px; height: 32px;padding:0;margin:0" id="<%= this.data.attr('wid') %>">
         <div class="vis-widget-body" style="padding:0;margin:0;color: <%= vis.binds.lcars.color(this.data.attr('lcars_color')) %>">
@@ -468,7 +474,7 @@
         data-vis-name="Line"
         data-vis-type="static"
         data-vis-prev='<div id="prev_tplLcarsLine" style="position: relative; text-align: initial;padding: 4px "><div class="vis-widget_prev ui-draggable-handle" style="width: 69px; height: 13px; padding: 0px; margin: 0px; position: absolute;" > <div class="vis-widget-prev-body" style="padding: 0px; margin: 0px; background-color: rgb(255, 153, 0);"> </div> </div></div>'
-        data-vis-attrs="lcars_color[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
+        data-vis-attrs="lcars_color[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray"
         >
     <div class="vis-widget <%== this.data.attr('class') %>" style="width: 195px; height: 25px; padding: 0; margin: 0" id="<%= this.data.attr('wid') %>">
         <div class="vis-widget-body" style="padding:0;margin:0;background-color: <%= vis.binds.lcars.color(this.data.attr('lcars_color')) %>">
@@ -483,7 +489,7 @@
         data-vis-prev='<img src="widgets/lcars/img/Prev_Top.png"></img>'
         data-vis-type="static"
         data-vis-name="Line-Top"
-        data-vis-attrs="lcars_color[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;line_height[3]/slider,1,40,1"
+        data-vis-attrs="lcars_color[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;line_height[3]/slider,1,40,1"
         >
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 400px; height: 25px;" id="<%= this.data.attr('wid') %>">
         <div class="vis-widget-body">
@@ -499,7 +505,7 @@
         data-vis-type="static"
         data-vis-name="Line-Bottom"
         data-vis-prev='<img src="widgets/lcars/img/Prev_Bottom.png"></img>'
-        data-vis-attrs="lcars_color[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;line_height[3]/slider,1,40,1"
+        data-vis-attrs="lcars_color[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;line_height[3]/slider,1,40,1"
         >
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 400px; height: 25px;" id="<%= this.data.attr('wid') %>">
         <div class="vis-widget-body">
@@ -515,7 +521,7 @@
         data-vis-type="static"
         data-vis-prev='<div id="prev_tplLcarsEdge" style="position: relative; text-align: initial;padding: 4px "><div class="vis-widget_prev vis-lcars ui-selectee ui-draggable-handle " style="width: 93px; height: 33px; padding: 0px; margin: 0px; position: absolute;" > <div class="vis-widget-prev-body" style="padding: 0px; margin: 0px; background-color: rgb(255, 153, 0);"> <img width="100%" height="100%" style="padding:0;margin:0;border:none;" src="widgets/lcars/img/edge2-tl.png"> </div> </div></div>'
         data-vis-name="Edge"
-        data-vis-attrs="edge_type[1]/nselect,1,2;edge_direction[tl]/select,tl,tr,br,bl;lcars_color[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
+        data-vis-attrs="edge_type[1]/nselect,1,2;edge_direction[tl]/select,tl,tr,br,bl;lcars_color[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray"
         >
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 195px; height: 83px;padding:0;margin:0" id="<%= this.data.attr('wid') %>">
         <div class="vis-widget-body" style="padding:0;margin:0;background-color: <%= vis.binds.lcars.color(this.data.attr('lcars_color')) %>">
@@ -531,7 +537,7 @@
         data-vis-type="static"
         data-vis-prev='<div id="prev_tplLcarsEdge" style="position: relative; text-align: initial;padding: 4px "><div class="vis-widget_prev vis-lcars ui-selectee ui-draggable-handle " style="width: 93px; height: 25px; padding: 0px; margin: 0px; font-size: 1px" > <div class="vis-widget-prev-body" style="padding: 0px; margin: 0px; background-color: rgb(255, 153, 0); text-align: right"> <img height="100%" style="padding:0;margin:0;border:none;" src="widgets/lcars/img/end-r.png"> </div> </div></div>'
         data-vis-name="End"
-        data-vis-attrs="frame_direction[r]/select,r,l;lcars_color[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
+        data-vis-attrs="frame_direction[r]/select,r,l;lcars_color[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray"
         >
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 50px; height: 25px;padding:0;margin:0" id="<%= this.data.attr('wid') %>">
         <div class="vis-widget-body" style="padding:0; margin:0; font-size: 1px; background-color: <%= vis.binds.lcars.color(this.data.attr('lcars_color')) %>; text-align: <%= (this.data.attr('frame_direction') == 'r' ? 'right' : 'left') %>">
@@ -579,7 +585,7 @@
         data-vis-type="static"
         data-vis-prev='<div id="prev_tplLcarsSfLogo" style="position: relative; text-align: initial;padding: 4px "><div class="vis-widget_prev ui-draggable-handle " style="width: 73px; height: 77px; padding: 0px; margin: 0px; position: absolute;" > <div class="vis-widget-prev-body" style="background-color: rgb(255, 153, 0);"> <img width="100%" src="widgets/lcars/img/starfleet.png"> </div> </div></div>'
         data-vis-name="Starfleet Logo"
-        data-vis-attrs="lcars_color[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
+        data-vis-attrs="lcars_color[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray"
         >
     <div class="vis-widget <%== this.data.attr('class') %>" style="width: 161px; height: 171px ;padding:0;margin:0" id="<%= this.data.attr('wid') %>">
         <div class="vis-widget-body" style="background-color: <%= vis.binds.lcars.color(this.data.attr('lcars_color')) %>">
@@ -612,7 +618,7 @@
         data-vis-type="static"
         data-vis-name="Random Numbers"
         data-vis-prev='<div id="prev_tplLcarsRandom" style="position: relative; text-align: initial;padding: 4px "><div class="vis-widget_prev ui-draggable-handle " style="font-family: lcars_font; letter-spacing: 1px; font-size: 30px; width: 87px; height: 78px; padding: 0px; margin: 0px" > <div class="vis-widget-prev-body" style="padding: 0px; margin: 0px; color: rgb(255, 153, 0);"> <table style="width:100%"> <tbody><tr><td>592</td><td>248</td><td></td></tr><tr><td>653</td><td>211</td><td></td></tr></tbody></table> </div>  </div></div>'
-        data-vis-attrs="rows[6];cols[4];speed[1000];lcars_color[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
+        data-vis-attrs="rows[6];cols[4];speed[1000];lcars_color[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray"
         >
     <div class="vis-widget <%== this.data.attr('class') %>" style="font-family: lcars_font; letter-spacing: 1px; font-size: 30px; width: 260px; height: 32px;padding:0;margin:0" id="<%= this.data.attr('wid') %>">
         <div class="vis-widget-body" style="padding:0;margin:0;color: <%= vis.binds.lcars.color(this.data.attr('lcars_color')) %>">
@@ -665,8 +671,8 @@
         data-vis-type="ctrl"
         data-vis-name="Button State"
         data-vis-prev='<div id="prev_tplLcarsButton" style="text-align: initial;padding: 4px"><div class="vis-widget_prev vis-lcars ui-draggable-handle " style="width: 132px; height: 46px; position: absolute;"> <div class="vis-widget-prev-body"> <span class="button RR L" style="width: 70px; background-color: rgb(255, 153, 0);"><span style="">state</span></span> </div> </div></div>'
-        data-vis-attrs="oid;value;title;rounded[both]/select,both,left,right,none;color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;"
-        data-vis-attrs0="group.subtitle;subtitle[state];subtitle_show/select,none,left,right;subtitle_color/nselect,,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
+        data-vis-attrs="oid;value;title;rounded[both]/select,both,left,right,none;color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;"
+        data-vis-attrs0="group.subtitle;subtitle[state];subtitle_show/select,none,left,right;subtitle_color/nselect,,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray"
         >
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 150px; height: 45px" id="<%= this.data.attr('wid') %>"  data-oid="<%= this.data.attr('oid') %>" data-val="<%= this.data.attr('value') %>" <%= (el) -> vis.binds.basic.state(el) %> >
         <div class="vis-widget-body">
@@ -683,8 +689,8 @@
         data-vis-name="Button Increment"
         data-vis-prev='<div id="prev_tplLcarsButtonInc" style="text-align: initial;padding: 4px"><div class="vis-widget_prev vis-lcars" style="width: 132px; height: 46px; position: absolute;"> <div class="vis-widget-prev-body"> <span class="button RR L" style="width: 70px; background-color: rgb(255, 153, 0);"><span>increment</span></span> </div> </div></div>'
         data-vis-attrs="oid;step[1];minmax[100];repeat_delay[800];repeat_interval[800];title;rounded/select,both,left,right,none;"
-        data-vis-attrs0="color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;"
-        data-vis-attrs1="group.subtitle;subtitle[increment];subtitle_show/select,none,left,right;subtitle_color/nselect,,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
+        data-vis-attrs0="color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;"
+        data-vis-attrs1="group.subtitle;subtitle[increment];subtitle_show/select,none,left,right;subtitle_color/nselect,,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray"
         >
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 150px; height: 45px" id="<%= this.data.attr('wid') %>" data-vis-step="<%= this.data.attr('step') %>" data-oid="<%= this.data.attr('oid') %>" data-val="<%= this.data.attr('value') %>" <%= (el) -> vis.binds.basic.increment(el, data.attr('minmax'), data.attr('repeat_delay'), data.attr('repeat_interval')) %>>
         <div class="vis-widget-body">
@@ -700,8 +706,8 @@
         data-vis-type="ctrl"
         data-vis-name="Button Toggle"
         data-vis-prev='<div id="prev_tplLcarsButtonToggle" style="position: relative; text-align: initial;padding: 4px"><div class="vis-widget_prev vis-lcars" style="width: 132px; height: 46px;"> <div class="vis-widget-prev-body"> <span class="button RR L" style="width: 70px; background-color: rgb(255, 153, 0);"><span>toggle</span></span> </div> </div></div>'
-        data-vis-attrs="oid;title;rounded/select,both,left,right,none;color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;"
-        data-vis-attrs0="group.subtitle;subtitle[toggle];subtitle_show/select,none,left,right;subtitle_color/nselect,,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
+        data-vis-attrs="oid;title;rounded/select,both,left,right,none;color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;"
+        data-vis-attrs0="group.subtitle;subtitle[toggle];subtitle_show/select,none,left,right;subtitle_color/nselect,,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray"
         >
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 150px; height: 45px" id="<%= this.data.attr('wid') %>" data-vis-step="<%= this.data.attr('step') %>" data-oid="<%= this.data.attr('oid') %>" data-val="<%= this.data.attr('value') %>" <%= (el) -> vis.binds.basic.toggle(el) %>>
         <div class="vis-widget-body">
@@ -717,12 +723,12 @@
     data-vis-type="ctrl,val"
     data-vis-name="Button State"
     data-vis-prev='<div id="prev_tplLcarsButtonVal" style="position: relative; text-align: initial;padding: 4px "><div class="vis-widget_prev vis-lcars" style="width: 132px; height: 50px"> <div class="vis-widget-prev-body"> <span class="button RR L" style="width: 80px; background-color: rgb(255, 153, 0);"><span class="B_titleL _subtitle" style="color:#cc99cc">25.0</span><span class="_title">state</span></span> </div> </div></div>'
-    data-vis-attrs="oid;value;title;rounded[both]/select,both,left,right,none;color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;"
-    data-vis-attrs0="color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;"
-    data-vis-attrs1="color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;"
+    data-vis-attrs="oid;value;title;rounded[both]/select,both,left,right,none;color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;"
+    data-vis-attrs0="color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;"
+    data-vis-attrs1="color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;"
     data-vis-attrs2="rounded/select,both,left,right,none;"
     data-vis-attrs3="group.title;title_oid[(state)]/id;title_prepend;title_append_singular;title_append_plural;title_digits;"
-    data-vis-attrs4="group.subtitle;subtitle_oid[(25.0)]/id;subtitle_prepend;subtitle_append_singular;subtitle_append_plural;subtitle_digits;subtitle_show[left]/select,none,left,right;subtitle_color/nselect,,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
+    data-vis-attrs4="group.subtitle;subtitle_oid[(25.0)]/id;subtitle_prepend;subtitle_append_singular;subtitle_append_plural;subtitle_digits;subtitle_show[left]/select,none,left,right;subtitle_color/nselect,,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray"
     >
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 150px; height: 45px;" id="<%= this.data.attr('wid') %>"  data-oid="<%= this.data.attr('oid') %>" data-val="<%= this.data.attr('value') %>" <%= (el) -> vis.binds.basic.state(el) %> >
         <div class="vis-widget-body">
@@ -739,11 +745,11 @@
     data-vis-name="Button Increment"
     data-vis-prev='<div id="tplLcarsButtonIncVal" style="position: relative; text-align: initial;padding: 4px "><div class="vis-widget_prev vis-lcars" style="width: 132px; height: 50px"> <div class="vis-widget-prev-body"> <span class="button RR L" style="width: 80px; background-color: rgb(255, 153, 0);"><span class="B_titleL _subtitle" style="color:#cc99cc">25.0</span><span class="_title">inc</span></span> </div> </div></div>'
     data-vis-attrs="oid;step[1];minmax[100];repeat_delay[800];repeat_interval[800];"
-    data-vis-attrs0="color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;"
-    data-vis-attrs1="color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;"
+    data-vis-attrs0="color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;"
+    data-vis-attrs1="color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;"
     data-vis-attrs2="rounded/select,both,left,right,none;"
     data-vis-attrs3="group.title;title_oid[(inc)]/id;title_prepend;title_append_singular;title_append_plural;title_digits;"
-    data-vis-attrs4="group.subtitle;subtitle_oid[(25.0)]/id;subtitle_prepend;subtitle_append_singular;subtitle_append_plural;subtitle_digits;subtitle_show[left]/select,none,left,right;subtitle_color/nselect,,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
+    data-vis-attrs4="group.subtitle;subtitle_oid[(25.0)]/id;subtitle_prepend;subtitle_append_singular;subtitle_append_plural;subtitle_digits;subtitle_show[left]/select,none,left,right;subtitle_color/nselect,,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray"
     >
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 150px; height: 45px;" id="<%= this.data.attr('wid') %>" data-vis-step="<%= this.data.attr('step') %>" data-oid="<%= this.data.attr('oid') %>" data-val="<%= this.data.attr('value') %>" <%= (el) -> vis.binds.basic.increment(el, data.attr('minmax'), data.attr('repeat_delay'), data.attr('repeat_interval')) %>>
         <div class="vis-widget-body">
@@ -760,11 +766,11 @@
     data-vis-name="Button Toggle"
     data-vis-prev='<div id="tplLcarsButtonToggleVal" style="position: relative; text-align: initial;padding: 4px "><div class="vis-widget_prev vis-lcars" style="width: 132px; height: 50px"> <div class="vis-widget-prev-body"> <span class="button RR L" style="width: 80px; background-color: rgb(255, 153, 0);"><span class="B_titleL _subtitle" style="color:#cc99cc">0</span><span class="_title">toggle</span></span> </div> </div></div>'
     data-vis-attrs="oid;"
-    data-vis-attrs0="color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;"
-    data-vis-attrs1="color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white;"
+    data-vis-attrs0="color_default[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;"
+    data-vis-attrs1="color_active[orange]/nselect,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray;"
     data-vis-attrs2="rounded/select,both,left,right,none;"
     data-vis-attrs3="group.title;title_oid[(toggle)]/id;title_prepend;title_append_singular;title_append_plural;title_digits;"
-    data-vis-attrs4="group.subtitle;subtitle_oid[(0)]/id;subtitle_prepend;subtitle_append_singular;subtitle_append_plural;subtitle_digits;subtitle_show[left]/select,none,left,right;subtitle_color/nselect,,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white"
+    data-vis-attrs4="group.subtitle;subtitle_oid[(0)]/id;subtitle_prepend;subtitle_append_singular;subtitle_append_plural;subtitle_digits;subtitle_show[left]/select,none,left,right;subtitle_color/nselect,,orange,purple,blue,lightBlue,red,lightRed,tan,lightTan,pink,white,gray,lightGray"
     >
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 150px; height: 45px;;" id="<%= this.data.attr('wid') %>" data-vis-step="<%= this.data.attr('step') %>" data-oid="<%= this.data.attr('oid') %>" data-val="<%= this.data.attr('value') %>" <%= (el) -> vis.binds.basic.toggle(el) %>>
         <div class="vis-widget-body">
