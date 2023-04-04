@@ -137,7 +137,7 @@
                     return '#888888';
                     break;
                 case 'lightGray':
-                    return '#aaaaaa';
+                    return '#cccccc';
                     break;
                 default:
                     return '#ffffff';
@@ -659,6 +659,23 @@
     <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 114px; height: 317px;padding:0;margin:0" id="<%= this.data.attr('wid') %>">
         <div class="vis-widget-body" style="padding:0;margin:0">
             <div style="width:100%; height:100%; background-repeat: no-repeat; background-image: url('widgets/lcars/img/warpcore.png')"></div>
+            <div <%= (el) -> vis.binds.lcars.warpcoreVal(el, data.attr('oid'), data.attr('min'), data.attr('max'), data.attr('wid')) %>></div>
+        </div>
+    </div>
+</script>
+
+<script id="tplLcarsWarpcoreGray"
+        type="text/ejs"
+        class="vis-tpl"
+        data-vis-set="lcars"
+        data-vis-type="val"
+        data-vis-name="WarpcoreGray"
+        data-vis-prev='<img src="widgets/lcars/img/Prev_Warpcore-gray.png"></img>'
+        data-vis-attrs="oid;min[0];max[1]"
+        >
+    <div class="vis-widget vis-lcars <%== this.data.attr('class') %>" style="width: 114px; height: 317px;padding:0;margin:0" id="<%= this.data.attr('wid') %>">
+        <div class="vis-widget-body" style="padding:0;margin:0">
+            <div style="width:100%; height:100%; background-repeat: no-repeat; background-image: url('widgets/lcars/img/warpcore-gray.png')"></div>
             <div <%= (el) -> vis.binds.lcars.warpcoreVal(el, data.attr('oid'), data.attr('min'), data.attr('max'), data.attr('wid')) %>></div>
         </div>
     </div>
