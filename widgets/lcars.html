@@ -2,9 +2,9 @@
 
     ioBroker.vis lcars Widget-Set
 
-    version: "1.0.4"
+    version: "1.1.0"
 
-    2013-2017 hobbyquaker, bluefox
+    2013-2023 hobbyquaker, bluefox
 
     TODO - Slider Widgets
     TODO - Bar Widgets
@@ -156,11 +156,15 @@
             } else if (options.oid && (options.oid[0] === '(' || options.oid[0] === '[' || options.oid[0] === '{')) {
                 // Process it as text
                 val = options.oid.substring(1);
-                if (val[val.length - 1] === ')' || val[val.length - 1] === ']' || val[val.length - 1] === '}') val = val.substring(0, val.length - 1);
+                if (val[val.length - 1] === ')' || val[val.length - 1] === ']' || val[val.length - 1] === '}') {
+                    val = val.substring(0, val.length - 1);
+                }
             } else {
                 // get actual value and
                 val = (vis.states[options.oid + '.val'] !== undefined) ? vis.states[options.oid + '.val'] : 0;
-                if (val === 'true' || val === true) val = 1;
+                if (val === 'true' || val === true) {
+                    val = 1;
+                }
 
                 if (options.digits !== null && options.digits !== undefined && options.digits !== '') {
                     val = parseFloat(val).toFixed(parseInt(options.digits, 10));
@@ -168,16 +172,24 @@
 
                 if (options.append_singular || options.append_plural) {
                     if (val == 1) {
-                        if (options.append_singular !== undefined) val += options.append_singular;
+                        if (options.append_singular !== undefined) {
+                            val += options.append_singular;
+                        }
                     } else {
-                        if (options.append_plural !== undefined) val += options.append_plural;
+                        if (options.append_plural !== undefined) {
+                            val += options.append_plural;
+                        }
                     }
                 }
-                if (options.prepend !== undefined) val = options.prepend + val;
+                if (options.prepend !== undefined) {
+                    val = options.prepend + val;
+                }
 
                 // Subscribe
                 if (onChange) {
-                    if (bound) bound.push(options.oid + '.val');
+                    if (bound) {
+                        bound.push(options.oid + '.val');
+                    }
                     vis.states.bind(options.oid + '.val', onChange);
                 }
             }
@@ -225,7 +237,9 @@
 
             // process subtitle
             if (typeof subtitle === 'object') {
-                if (subtitle.oid) bound.push(subtitle.oid + '.val');
+                if (subtitle.oid) {
+                    bound.push(subtitle.oid + '.val');
+                }
                 // TODO: bug by every change of some parameter new bind will be created!! In Edit mode can be the problem.
                 options.subTitle.text = vis.binds.lcars._oid(subtitle, bound, onChange);
             }
@@ -234,7 +248,9 @@
 
             if (id && val !== undefined) {
                 var newVal = (vis.states[id + '.val'] !== undefined) ? vis.states[id + '.val'] : 0;
-                if (newVal === 'true' || newVal === true) newVal = 1;
+                if (newVal === 'true' || newVal === true) {
+                    newVal = 1;
+                }
 
                 if (val == newVal) {
                     $this.css('background-color', vis.binds.lcars.color(color_active));
@@ -252,7 +268,9 @@
             }
             // process title
             if (title && typeof title === 'object') {
-                if (title.oid) bound.push(title.oid + '.val');
+                if (title.oid) {
+                    bound.push(title.oid + '.val');
+                }
                 _title = vis.binds.lcars._oid(title, bound, onChange);
             }
 
@@ -303,8 +321,12 @@
             var spdRange = minSpeed - maxSpeed;
             var val = parseFloat(vis.states.attr(id + '.val'));
             var speed = parseInt(minSpeed + ((spdRange / valRange) * val), 10);
-            if (isNaN(speed))     speed = minSpeed;
-            if (speed < maxSpeed) speed = maxSpeed;
+            if (isNaN(speed))     {
+                speed = minSpeed;
+            }
+            if (speed < maxSpeed) {
+                speed = maxSpeed;
+            }
 
             var $this = $(el).prev();
             if (vis.binds.lcars.warpcoreInterval[wid]) {
@@ -312,21 +334,29 @@
             }
             vis.binds.lcars.warpcoreInterval[wid] = _setInterval(function (_this) {
                 i += 1;
-                if (i > 4) i = 0;
+                if (i > 4) {
+                    i = 0;
+                }
                 _this.css('background-position', -d * i);
             }, speed, $this);
 
             vis.states.bind(id + '.val', function (e, newVal /* , oldVal */) {
                 var speed = parseInt(minSpeed + ((spdRange / valRange) * parseFloat(newVal)), 10);
-                if (isNaN(speed))     speed = minSpeed;
-                if (speed < maxSpeed) speed = maxSpeed;
+                if (isNaN(speed)) {
+                    speed = minSpeed;
+                }
+                if (speed < maxSpeed) {
+                    speed = maxSpeed;
+                }
 
                 if (vis.binds.lcars.warpcoreInterval[wid]) {
                     clearInterval(vis.binds.lcars.warpcoreInterval[wid]);
                 }
                 vis.binds.lcars.warpcoreInterval[wid] = _setInterval(function (_this) {
                     i += 1;
-                    if (i > 4) i = 0;
+                    if (i > 4) {
+                        i = 0;
+                    }
                     _this.css('background-position', -d * i);
                 }, speed, $this);
             });

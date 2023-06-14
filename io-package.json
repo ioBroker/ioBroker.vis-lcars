@@ -14,6 +14,9 @@
                 "ru": "fix radius settings for firefox"
             }
         },
+        "titleLang": {
+            "en": "lcars style Widgets"
+        },
         "title": "ioBroker Visualisation - lcars style Widgets",
         "desc": {
             "en": "Star Trek Widgets for ioBroker.vis",
@@ -49,7 +52,12 @@
         "restartAdapters": [
             "vis"
         ],
-        "noConfig": true
+        "dataSource": "none",
+        "connectionType": "none",
+        "noConfig": true,
+        "adminUI": {
+            "config": "none"
+        }
     },
     "native": {
         "dependencies": [
