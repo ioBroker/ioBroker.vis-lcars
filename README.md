@@ -13,7 +13,7 @@ Button attributes:
 	### **WORK IN PROGRESS**
 -->
 ## Changelog
-### **WORK IN PROGRESS**
+### 1.1.1 (2023-06-14)
 * (oelison) Added two color schemes: gray and light gray
 
 ### 1.0.4 (2017-10-04)
