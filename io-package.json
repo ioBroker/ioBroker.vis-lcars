@@ -70,7 +70,6 @@
     ],
     "dataSource": "none",
     "connectionType": "none",
-    "noConfig": true,
     "adminUI": {
       "config": "none"
     }
